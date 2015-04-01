@@ -5,6 +5,8 @@ pygame.init()
 import time
 import random
 
+#this is editted in pycharm
+
 # original 1080, 1920
 display_width = 540
 display_height = 960

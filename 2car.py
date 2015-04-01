@@ -9,7 +9,8 @@ import random
 
 # original 1080, 1920
 display_width = 540
-display_height = 960
+display_height = 540
+fpsClock = pygame.time.Clock()
 
 black = (0, 0, 0)
 white = (255, 254, 255)
@@ -34,10 +35,10 @@ carImageBlue = pygame.transform.scale(carImageBlue, (54, 96))
 
 xred = 45
 xred_change = 0
-yred = 820
+yred = 420
 xblue = 450
 xblue_change = 0
-yblue = 820
+yblue = 420
 
 def background():
     gameDisplay.fill(backgoundBlue)
@@ -65,7 +66,27 @@ def movement_loop():
         xred_change += 2
 
 def test():
-    print('hi')
+    print('X Key Pressed')
+
+def movement_loop_test():
+    # global xred, xred_change
+    # for xred in range(0,150):
+    #     print("Current xred Value: %d" %(xred))
+    #     xred_change +=1
+    #     print("Current xred_change Value: %d" %(xred_change))
+    global  xred
+    gameDisplay.blit(carImageRed, (xred, yred))
+    for xred in range(0,150):
+        print("Current xred Value: %d" %(xred))
+        xred += 1
+
+
+
+
+
+
+
+
 
 def gameloop():
     global xred, xred_change, yred, xblue, xblue_change, yblue
@@ -80,9 +101,12 @@ def gameloop():
                 quit()
 
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_x:
-                    movement_loop()
-                    test()
+                if event.key == pygame.K_x and xred <150 :
+                    movement_loop_test()
+                if event.key == pygame.K_z and xred > 0 :
+                    xred -= 10
+
+
 
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_z or event.key == pygame.K_x:
@@ -99,11 +123,13 @@ def gameloop():
         backgroundline((display_width/2), 0, 17.142, 2000, dividerBlue)
 
         #cars
-        RedCar(xred, yred)
+        # RedCar(xred, yred)
+        gameDisplay.blit(carImageRed, (xred, yred))
         BlueCar(xblue, yblue)
 
         pygame.display.update()
-        clock.tick(90)
+        fpsClock.tick(200)
+        # clock.tick(90)
 
 
 gameloop()

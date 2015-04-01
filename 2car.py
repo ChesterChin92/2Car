@@ -1,6 +1,8 @@
 __author__ = 'John Choo'
 
 import pygame
+import os
+
 pygame.init()
 import time
 import random
@@ -20,9 +22,14 @@ gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('2 Car')
 clock = pygame.time.Clock()
 
-carImageRed = pygame.image.load("C:\Users\John Choo\Desktop\ed-car.png")
+
+# carImageRed = pygame.image.load("~Graphics\ed-car.png")
+# carImageRed = pygame.image.load(os.path.join(os.path.expanduser("~\PycharmProjects\;2Car"), "Graphics\ed-car.png"))
+carImageRed = pygame.image.load(os.path.join(os.path.join(os.curdir, 'Graphics'), "ed-car.png") )
 carImageRed = pygame.transform.scale(carImageRed, (54, 96))
-carImageBlue = pygame.image.load("C:\Users\John Choo\Desktop\lue_car-v3.png")
+
+# carImageBlue = pygame.image.load("~Graphics\lue_car-v3.png")
+carImageBlue = pygame.image.load(os.path.join(os.path.join(os.curdir, 'Graphics'), "lue_car-v3.png") )
 carImageBlue = pygame.transform.scale(carImageBlue, (54, 96))
 
 xred = 45

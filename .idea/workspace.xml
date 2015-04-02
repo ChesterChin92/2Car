@@ -480,7 +480,13 @@
       <option name="project" value="LOCAL" />
       <updated>1427962060058</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Reset values back to 960pixel. Previously changed to 460 to match my screen monitor.">
+      <created>1427962248970</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1427962248970</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -505,7 +511,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -548,7 +554,8 @@
     <MESSAGE value="Modified image loading directory, making image loading dynamic across different machine." />
     <MESSAGE value="Testing pygame blit feature. Yet still cannot animate car movement. &#10;Created test code on looping to have a quick proof on concept." />
     <MESSAGE value="Added animation_sample.py to test animation concept when key is pressed. Able to execute a series of animation after key pressed. &#10;&#10;- Animation outside of main game loop can easliy crash the program. (Might need to apply class concept)&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added animation_sample.py to test animation concept when key is pressed. Able to execute a series of animation after key pressed. &#10;&#10;- Animation outside of main game loop can easliy crash the program. (Might need to apply class concept)&#10;" />
+    <MESSAGE value="Reset values back to 960pixel. Previously changed to 460 to match my screen monitor." />
+    <option name="LAST_COMMIT_MESSAGE" value="Reset values back to 960pixel. Previously changed to 460 to match my screen monitor." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

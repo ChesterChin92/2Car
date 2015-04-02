@@ -9,7 +9,7 @@ import random
 
 # original 1080, 1920
 display_width = 540
-display_height = 540
+display_height = 960
 fpsClock = pygame.time.Clock()
 
 black = (0, 0, 0)
@@ -35,10 +35,10 @@ carImageBlue = pygame.transform.scale(carImageBlue, (54, 96))
 
 xred = 45
 xred_change = 0
-yred = 420
+yred = 820
 xblue = 450
 xblue_change = 0
-yblue = 420
+yblue = 820
 
 def background():
     gameDisplay.fill(backgoundBlue)
@@ -122,7 +122,7 @@ def gameloop():
         BlueCar(xblue, yblue)
 
         pygame.display.update()
-        fpsClock.tick(200)
+        fpsClock.tick(90)
         # clock.tick(90)
 
 

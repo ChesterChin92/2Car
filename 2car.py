@@ -82,12 +82,6 @@ def movement_loop_test():
 
 
 
-
-
-
-
-
-
 def gameloop():
     global xred, xred_change, yred, xblue, xblue_change, yblue
 

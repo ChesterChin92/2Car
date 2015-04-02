@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e782c1fd-f866-4860-a6bf-2a501b1c8211" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2car.py" afterPath="$PROJECT_DIR$/2car.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled4.iws" />
@@ -475,7 +474,13 @@
       <option name="project" value="LOCAL" />
       <updated>1427961678407</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added animation_sample.py to test animation concept when key is pressed. Able to execute a series of animation after key pressed. &#10;&#10;- Animation outside of main game loop can easliy crash the program. (Might need to apply class concept)&#10;">
+      <created>1427962060058</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1427962060058</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">

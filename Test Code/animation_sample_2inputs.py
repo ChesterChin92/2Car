@@ -18,32 +18,13 @@ def draw_stick_figure(screen, x, y):
     # Head
     pygame.draw.ellipse(screen, BLACK, [1 + x, y, 10, 10], 0)
 
-    # Legs
-    pygame.draw.line(screen, BLACK, [5 + x, 17 + y], [10 + x, 27 + y], 2)
-    pygame.draw.line(screen, BLACK, [5 + x, 17 + y], [x, 27 + y], 2)
-
-    # Body
-    pygame.draw.line(screen, RED, [5 + x, 17 + y], [5 + x, 7 + y], 2)
-
-    # Arms
-    pygame.draw.line(screen, RED, [5 + x, 7 + y], [9 + x, 17 + y], 2)
-    pygame.draw.line(screen, RED, [5 + x, 7 + y], [1 + x, 17 + y], 2)
 
 
 def draw_stick_figure2(screen, x, y):
     # Head
-    pygame.draw.ellipse(screen, BLACK, [1 + x, y, 20, 10], 0)
+    pygame.draw.ellipse(screen, GREEN, [1 + x, y, 20, 20], 0)
 
-    # Legs
-    pygame.draw.line(screen, BLACK, [5 + x, 17 + y], [10 + x, 27 + y], 2)
-    pygame.draw.line(screen, BLACK, [5 + x, 17 + y], [x, 27 + y], 2)
 
-    # Body
-    pygame.draw.line(screen, RED, [5 + x, 17 + y], [5 + x, 7 + y], 2)
-
-    # Arms
-    pygame.draw.line(screen, RED, [5 + x, 7 + y], [9 + x, 17 + y], 2)
-    pygame.draw.line(screen, RED, [5 + x, 7 + y], [1 + x, 17 + y], 2)
 
 
 # Setup
@@ -68,27 +49,23 @@ pygame.mouse.set_visible(0)
 x_speed = 0
 y_speed = 0
 
+x_speed_2 = 0
+y_speed_2 = 0
+
 # Current position
 x_coord = 10
 y_coord = 10
 
-
-def change_location():
-    for counter in range(0,10):
-        x_speed = counter
-        x_coord = x_coord + x_speed
-        screen.fill(WHITE)
-        draw_stick_figure(screen, x_coord, y_coord)
-        pygame.display.flip()
-        clock.tick(60)
+x_coord_2 = 10
+y_coord_2 = 10
 
 
 # -------- Main Program Loop -----------#
 while not done:
     # ALL EVENT PROCESSING SHOULD GO BELOW THIS COMMENT
-    for event in pygame.event.get(): # User did something
-        if event.type == pygame.QUIT: # If user clicked close
-            done = True # Flag that we are done so we exit this loop
+    for event in pygame.event.get():  # User did something
+        if event.type == pygame.QUIT:  # If user clicked close
+            done = True  # Flag that we are done so we exit this loop
             # User pressed down on a key
 
         elif event.type == pygame.KEYDOWN:
@@ -100,6 +77,7 @@ while not done:
                     x_coord = x_coord - x_speed
                     screen.fill(WHITE)
                     draw_stick_figure(screen, x_coord, y_coord)
+                    draw_stick_figure2(screen, x_coord_2, y_coord_2)
                     pygame.display.flip()
                     clock.tick(60)
             elif event.key == pygame.K_RIGHT:
@@ -127,37 +105,40 @@ while not done:
                     draw_stick_figure(screen, x_coord, y_coord)
                     pygame.display.flip()
                     clock.tick(60)
-            if event.key == pygame.K_s:
+            if event.key == pygame.K_a:
                  for counter in range(0,10):
-                    x_speed = counter
-                    x_coord = x_coord - x_speed
+                    x_speed_2 = counter
+                    x_coord_2 = x_coord_2 - x_speed_2
                     screen.fill(WHITE)
-                    draw_stick_figure2(screen, x_coord+5, y_coord)
+                    draw_stick_figure2(screen, x_coord_2, y_coord_2)
                     pygame.display.flip()
                     clock.tick(60)
+
+             # THIS WILL NOT MAKE STUFF BLIP WHILE MOVING
             elif event.key == pygame.K_d:
                 for counter in range(0,10):
-                    x_speed = counter
-                    x_coord = x_coord + x_speed
+                    x_speed_2 = counter
+                    x_coord_2 = x_coord_2 + x_speed_2
                     screen.fill(WHITE)
-                    draw_stick_figure2(screen, x_coord+5, y_coord)
+                    draw_stick_figure2(screen, x_coord_2, y_coord_2)
+                    draw_stick_figure(screen, x_coord, y_coord)
                     pygame.display.flip()
                     clock.tick(60)
 
             elif event.key == pygame.K_w:
                 for counter in range(0,10):
-                    y_speed = counter
-                    y_coord = y_coord - y_speed
+                    y_speed_2 = counter
+                    y_coord_2 = y_coord_2 - y_speed_2
                     screen.fill(WHITE)
-                    draw_stick_figure2(screen, x_coord+30, y_coord+30)
+                    draw_stick_figure2(screen, x_coord_2, y_coord_2)
                     pygame.display.flip()
                     clock.tick(60)
             elif event.key == pygame.K_s:
                 for counter in range(0,10):
-                    y_speed = counter
-                    y_coord = y_coord + y_speed
+                    y_speed_2 = counter
+                    y_coord_2 = y_coord_2 + y_speed_2
                     screen.fill(WHITE)
-                    draw_stick_figure2(screen, x_coord+30, y_coord+30)
+                    draw_stick_figure2(screen, x_coord_2, y_coord_2)
                     pygame.display.flip()
                     clock.tick(60)
 
@@ -172,6 +153,14 @@ while not done:
                 y_speed=0
             elif event.key == pygame.K_DOWN:
                 y_speed=0
+            if event.key == pygame.K_a:
+                x_speed_2= 0
+            elif event.key == pygame.K_d:
+                x_speed_2= 0
+            elif event.key == pygame.K_w:
+                y_speed_2= 0
+            elif event.key == pygame.K_s:
+                y_speed_2 =0
     # ALL EVENT PROCESSING SHOULD GO ABOVE THIS COMMENT
 
     # ALL GAME LOGIC SHOULD GO BELOW THIS COMMENT
@@ -186,10 +175,10 @@ while not done:
 
     # First, clear the screen to WHITE. Don't put other drawing commands
     # above this, or they will be erased with this command.
-    screen.fill(WHITE)
+    #screen.fill(WHITE)
 
-    draw_stick_figure(screen, x_coord, y_coord)
-    draw_stick_figure2(screen, x_coord, y_coord)
+    #draw_stick_figure(screen, x_coord, y_coord)
+    #draw_stick_figure2(screen, x_coord_2, y_coord_2)
     pygame.display.flip()
     # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT
 
